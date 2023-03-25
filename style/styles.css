@@ -5,7 +5,7 @@
 
 body {
   margin: 0 auto;
-  overflow: hidden;
+  overflow-y: scroll;
   font-family: "Vazir-FD";
   direction: rtl;
   background: #fafafa;
@@ -53,6 +53,7 @@ body {
   font-size: 1.2em;
   padding: 0.1em;
 }
+overflow-y: scroll;
 
 #products button,
 #remove-product {
