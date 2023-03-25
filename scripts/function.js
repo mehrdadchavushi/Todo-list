@@ -16,7 +16,6 @@ const renderProduct = (products, filter) => {
   filteredProducts = filteredProducts.filter((item) => {
     return filter.existItem ? item.exist : true;
   });
-  console.log(filteredProducts);
   document.querySelector("#products").innerHTML = "";
   filteredProducts.forEach((item) => {
     document.querySelector("#products").appendChild(createProductDom(item));
@@ -27,9 +26,9 @@ const sortProducts = (products, value) => {
   if (value === "byCreated") {
     return products.sort((a, b) => {
       if (a.created > b.created) {
-        return -1;
-      } else if (a.created < b.created) {
         return 1;
+      } else if (a.created < b.created) {
+        return -1;
       } else {
         return 0;
       }
@@ -38,9 +37,9 @@ const sortProducts = (products, value) => {
   if (value === "byEdited") {
     return products.sort((a, b) => {
       if (a.updated > b.updated) {
-        return -1;
-      } else if (a.updated < b.updated) {
         return 1;
+      } else if (a.updated < b.updated) {
+        return -1;
       } else {
         return 0;
       }
@@ -88,6 +87,7 @@ const createProductDom = (item) => {
   productEl.appendChild(price);
 
   button.textContent = "حذف";
+
   productEl.appendChild(button);
 
   button.addEventListener("click", () => {
