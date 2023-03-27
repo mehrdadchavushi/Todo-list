@@ -1,4 +1,4 @@
-const products = getProducts();
+let products = getProducts();
 
 const filter = {
   searchItem: "",
@@ -36,6 +36,13 @@ document.querySelector("#add-product-form").addEventListener("submit", (e) => {
   renderProduct(products, filter);
   e.target.elements.addProduct.value = "";
   e.target.elements.addPrice.value = "";
+});
+
+window.addEventListener("storage", (e) => {
+  if (e.key === "products") {
+    products = JSON.parse(e.newValue);
+    renderProduct(products, filter);
+  }
 });
 
 renderProduct(products, filter);

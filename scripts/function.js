@@ -26,9 +26,9 @@ const sortProducts = (products, value) => {
   if (value === "byCreated") {
     return products.sort((a, b) => {
       if (a.created > b.created) {
-        return 1;
-      } else if (a.created < b.created) {
         return -1;
+      } else if (a.created < b.created) {
+        return 1;
       } else {
         return 0;
       }
@@ -37,9 +37,9 @@ const sortProducts = (products, value) => {
   if (value === "byEdited") {
     return products.sort((a, b) => {
       if (a.updated > b.updated) {
-        return 1;
-      } else if (a.updated < b.updated) {
         return -1;
+      } else if (a.updated < b.updated) {
+        return 1;
       } else {
         return 0;
       }
